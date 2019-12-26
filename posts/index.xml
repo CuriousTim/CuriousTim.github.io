@@ -1,0 +1,27 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Justin&#39;s Website</title>
+		<link>https://CuriousTim.github.io/posts/</link>
+		<description>Recent content in Posts on Justin&#39;s Website</description>
+		<generator>Hugo -- gohugo.io</generator>
+		<language>en-us</language>
+		<copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+		<lastBuildDate>Wed, 25 Dec 2019 00:00:00 +0000</lastBuildDate>
+		<atom:link href="https://CuriousTim.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+		
+		<item>
+			<title>My First Post</title>
+			<link>https://CuriousTim.github.io/2019/12/25/my-first-post/</link>
+			<pubDate>Wed, 25 Dec 2019 00:00:00 +0000</pubDate>
+			
+			<guid>https://CuriousTim.github.io/2019/12/25/my-first-post/</guid>
+			<description>This is my first post.</description>
+			<content type="html"><![CDATA[
+
+
+<p>This is my first post.</p>
+]]></content>
+		</item>
+		
+	</channel>
+</rss>
