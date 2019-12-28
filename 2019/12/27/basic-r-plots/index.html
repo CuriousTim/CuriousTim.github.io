@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="Plotting in R">
+<meta itemprop="description" content="Plotting in R can get fairly completed with a plethora of functions and parameters available to users. Fortunately, there is not too much to learn in order to get started with the basics. This post will cover the basics of three different plot types in R: scatterplots, barplots and histograms.
+Scatterplots Scatterplots are made in R with the plot function. The only necessary arguments are the x and y coordinates of the points to plot.">
+<meta itemprop="datePublished" content="2019-12-27T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-27T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="525">
+
+
+
+<meta itemprop="keywords" content="R," /><meta property="og:title" content="Plotting in R" />
+<meta property="og:description" content="Plotting in R can get fairly completed with a plethora of functions and parameters available to users. Fortunately, there is not too much to learn in order to get started with the basics. This post will cover the basics of three different plot types in R: scatterplots, barplots and histograms.
+Scatterplots Scatterplots are made in R with the plot function. The only necessary arguments are the x and y coordinates of the points to plot." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://CuriousTim.github.io/2019/12/27/basic-r-plots/" />
+<meta property="article:published_time" content="2019-12-27T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-12-27T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Plotting in R"/>
+<meta name="twitter:description" content="Plotting in R can get fairly completed with a plethora of functions and parameters available to users. Fortunately, there is not too much to learn in order to get started with the basics. This post will cover the basics of three different plot types in R: scatterplots, barplots and histograms.
+Scatterplots Scatterplots are made in R with the plot function. The only necessary arguments are the x and y coordinates of the points to plot."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Plotting in R</title>
+	<link rel="stylesheet" href="https://CuriousTim.github.io/css/style.min.657bcb7af31123e4156b1a3d2ff60a636717e54ead74f882136b5114cf72b55e.css" integrity="sha256-ZXvLevMRI+QVaxo9L/YKY2cX5U6tdPiCE2tRFM9ytV4=" crossorigin="anonymous">
+	
+<link rel="stylesheet" href="https://CuriousTim.github.io/css/shades-of-purple.css" rel="stylesheet" id="theme-stylesheet">
+<script src="https://CuriousTim.github.io/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://CuriousTim.github.io">Justin&#39;s Website</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://CuriousTim.github.io/posts/">Posts</a>
+				<a href="https://CuriousTim.github.io/about-me/">About</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://github.com/CuriousTim" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://CuriousTim.github.io/posts/">Posts</a></li>
+			<li><a href="https://CuriousTim.github.io/about-me/">About</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner animated fadeIn faster">
+		<article class="thin">
+			<header class="post-header">
+				<div class="post-meta"><span>Dec 27, 2019</span></div>
+				<h1>Plotting in R</h1>
+			</header>
+			<div class="content">
+				
+
+
+<p>Plotting in R can get fairly completed with a plethora of functions and parameters available to users. Fortunately, there is not too much to learn in order to get started with the basics. This post will cover the basics of three different plot types in R: scatterplots, barplots and histograms.</p>
+<div id="scatterplots" class="section level2">
+<h2>Scatterplots</h2>
+<p>Scatterplots are made in R with the <code>plot</code> function. The only necessary arguments are the x and y coordinates of the points to plot. Usually you would provide two different numeric vectors as shown below, but you can actually plot with a single vector as well. In that case, the indices of the vector will be used as the x-coordinates and the vector entries will be used as the y-coordinates.</p>
+<pre class="r"><code>plot(
+  x = runif(50, min = 0, max = 100),
+  y = runif(50, min = 0, max = 100),
+  type = &quot;b&quot;,
+  main = &quot;My First Plot&quot;,
+  xlab = &quot;Random Points from Uniform Distribution&quot;,
+  ylab = &quot;Random Points from Uniform Distribution&quot;,
+  pch = 21,
+  col = &quot;tomato1&quot;,
+  bg = &quot;tan&quot;,
+  cex = 1
+)</code></pre>
+<p><img src="/posts/2019-12-27-basic-r-plots_files/figure-html/plot01-1.svg" width="672" /></p>
+<table>
+<caption><span id="tab:plotArgs">Table 1: </span>Some basic arguments to the plot function.</caption>
+<thead>
+<tr class="header">
+<th align="left">Argument</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>x</code></td>
+<td align="left">X-coordinates of points to plot.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>y</code></td>
+<td align="left">Y-coordinates of points to plot.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>type</code></td>
+<td align="left">What to plot e.g. “p” for points, “l” for lines, “b” for both.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>main</code></td>
+<td align="left">Main title of the plot.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>xlab</code></td>
+<td align="left">Label for the x-axis.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ylab</code></td>
+<td align="left">Label for the y-axis.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>pch</code></td>
+<td align="left">An integer specifying the point type or a single character to use as the “point”.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>col</code></td>
+<td align="left">Color of plotted points and lines. Will be used as the point border color</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>bg</code></td>
+<td align="left">Point fill color.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>cex</code></td>
+<td align="left">An integer or decimal giving the size of the points. Larger numbers are bigger.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="histograms" class="section level2">
+<h2>Histograms</h2>
+<p>Histograms are made with the <code>hist</code> function. Below is an example plot made with the <code>warpbreaks</code> dataset that comes with R.</p>
+<pre class="r"><code>yarn_breaks &lt;- datasets::warpbreaks$breaks
+hist(
+  x = yarn_breaks,
+  breaks = 10,
+  xlab = &quot;Number of Breaks&quot;,
+  main = &quot;Breaks of Wools of Different Types and Tensions During Weaving&quot;,
+  xlim = c(0, 80),
+  col = &quot;limegreen&quot;,
+  border = &quot;black&quot;
+)</code></pre>
+<p><img src="/posts/2019-12-27-basic-r-plots_files/figure-html/plot02-1.svg" width="672" /></p>
+<table>
+<caption><span id="tab:histArgs">Table 2: </span>Some basic arguments to the hist function.</caption>
+<thead>
+<tr class="header">
+<th align="left">Argument</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>x</code></td>
+<td align="left">Vector of values.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>breaks</code></td>
+<td align="left">Specifies how to create the bins.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>xlim</code></td>
+<td align="left">Range of the x-axis</td>
+</tr>
+<tr class="even">
+<td align="left"><code>border</code></td>
+<td align="left">Color of the bin borders</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>freq</code></td>
+<td align="left">If TRUE, counts are plots, else probability are plotted.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="barplots" class="section level2">
+<h2>Barplots</h2>
+<p>Barplots are made with the <code>barplot</code> function. Below is an example barplot made from eye color data of students at the University of Delaware reported in 1974.</p>
+<pre class="r"><code>hair_eye_color &lt;- datasets::HairEyeColor
+m_eye_colors &lt;- colSums(hair_eye_color[,, 1])
+f_eye_colors &lt;- colSums(hair_eye_color[,, 2])
+eye_colors &lt;- rbind(m_eye_colors, f_eye_colors)
+rownames(eye_colors) &lt;- c(&quot;Male&quot;, &quot;Female&quot;)
+eye_colors_percent &lt;- round(eye_colors / rowSums(eye_colors) * 100, 2)
+
+barplot(
+  height = eye_colors_percent, 
+  legend.text = TRUE, 
+  beside = TRUE, 
+  ylab = &quot;Percent&quot;,
+  xlab = &quot;Eye Color&quot;,
+  main = &quot;Eye Colors of Statistic Students&quot;,
+  ylim = c(0, 40)
+)</code></pre>
+<p><img src="/posts/2019-12-27-basic-r-plots_files/figure-html/plot03-1.svg" width="672" /></p>
+<table>
+<caption><span id="tab:barArgs">Table 3: </span>Some basic arguments to the barplot function.</caption>
+<thead>
+<tr class="header">
+<th align="left">Argument</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>height</code></td>
+<td align="left">Vector or matrix of heights. If a matrix, each row is a set of bars.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>legend.text</code></td>
+<td align="left">Value of TRUE uses row names for legend text. FALSE exludes a legend.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>beside</code></td>
+<td align="left">Whether to stack the bars or place next to each other.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ylim</code></td>
+<td align="left">Range of the y-axis.</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>print(&quot;Hello World&quot;)</code></pre>
+</div>
+
+			</div>
+			<hr class="post-end">
+			<footer class="post-info">
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-feather"><path d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"></path><line x1="16" y1="8" x2="2" y2="22"></line><line x1="17.5" y1="15" x2="9" y2="15"></line></svg>Justin Lim</p>
+				<p>
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://CuriousTim.github.io/tags/r">R</a></span>
+				</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>525 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-12-26 16:00 -0800</p>
+			</footer>
+		</article>
+		<div class="post-nav thin">
+			<a class="prev-post" href="https://CuriousTim.github.io/2019/12/25/my-first-post/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>My First Post</span>
+			</a>
+		</div>
+		<div id="comments" class="thin">
+</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://CuriousTim.github.io">Justin Lim</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://CuriousTim.github.io/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://CuriousTim.github.io/js/bundle.min.4a9a0ac3d2217822c7865b4161e6c2a71de1d70492264337755427898dd718f6.js" integrity="sha256-SpoKw9IheCLHhltBYebCpx3h1wSSJkM3dVQniY3XGPY=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>
